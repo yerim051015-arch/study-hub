@@ -142,10 +142,12 @@ export const Header: React.FC = () => {
                   color: '#f43f5e',
                   fontSize: '0.82rem',
                   fontWeight: 700,
+                  whiteSpace: 'nowrap',
+                  flexShrink: 0,
                 }}
               >
-                <span>{nearestDDay.title}</span>
-                <span style={{ background: '#f43f5e', color: 'white', padding: '0.1rem 0.4rem', borderRadius: '6px', fontSize: '0.75rem' }}>
+                <span style={{ whiteSpace: 'nowrap' }}>{nearestDDay.title}</span>
+                <span style={{ background: '#f43f5e', color: 'white', padding: '0.1rem 0.4rem', borderRadius: '6px', fontSize: '0.75rem', whiteSpace: 'nowrap', flexShrink: 0 }}>
                   {getDDayCount(nearestDDay.targetDate)}
                 </span>
               </div>
@@ -153,9 +155,9 @@ export const Header: React.FC = () => {
 
             {/* Supabase Cloud Auth Button */}
             {user ? (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', background: 'var(--color-primary-light)', padding: '0.35rem 0.75rem', borderRadius: '12px', border: '1px solid var(--border-glow)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', background: 'var(--color-primary-light)', padding: '0.35rem 0.75rem', borderRadius: '12px', border: '1px solid var(--border-glow)', whiteSpace: 'nowrap', flexShrink: 0 }}>
                 <Cloud size={15} color="var(--color-primary)" />
-                <span style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--color-primary)' }}>
+                <span style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--color-primary)', whiteSpace: 'nowrap' }}>
                   {user.email?.split('@')[0]}
                 </span>
                 <button
@@ -169,11 +171,11 @@ export const Header: React.FC = () => {
             ) : (
               <button
                 className="btn-secondary"
-                style={{ padding: '0.4rem 0.85rem', fontSize: '0.82rem' }}
+                style={{ padding: '0.45rem 0.85rem', fontSize: '0.82rem', whiteSpace: 'nowrap', flexShrink: 0 }}
                 onClick={() => setIsAuthModalOpen(true)}
               >
                 <User size={15} color="var(--color-primary)" />
-                <span>로그인 / 클라우드 연동</span>
+                <span style={{ whiteSpace: 'nowrap' }}>로그인 / 클라우드 연동</span>
               </button>
             )}
 
