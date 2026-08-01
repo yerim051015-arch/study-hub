@@ -12,7 +12,7 @@
   --color-accent: #f43f5e;
   --color-pink-highlight: #ff6b8b;
 
-  /* Subject Badge Colors - Refined Minimalist Palette */
+  /* Subject Badge Colors - Solid Vibrant Palette */
   --subj-violet: #18181b;
   --subj-blue: #2563eb;
   --subj-emerald: #059669;
@@ -305,29 +305,30 @@ body {
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Subject Tag Badges */
+/* Solid Unified Subject Tag Badges */
 .subject-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.2rem 0.55rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
   font-weight: 800;
-  letter-spacing: 0.02em;
-  border: 1px solid currentColor;
+  letter-spacing: 0.01em;
+  color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.subj-bg-violet { background: #18181b; color: #ffffff; border-color: #18181b; }
-.subj-bg-blue { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
-.subj-bg-emerald { background: #ecfdf5; color: #047857; border-color: #a7f3d0; }
-.subj-bg-amber { background: #fffbeb; color: #b45309; border-color: #fde68a; }
-.subj-bg-rose { background: #fff1f2; color: #be123c; border-color: #fecdd3; }
-.subj-bg-indigo { background: #eef2ff; color: #4338ca; border-color: #c7d2fe; }
-.subj-bg-cyan { background: #ecfeff; color: #0e7490; border-color: #a5f3fc; }
-.subj-bg-pink { background: #fdf2f8; color: #be185d; border-color: #fbcfe8; }
+.subj-bg-violet { background: #18181b; color: #ffffff !important; border: 1px solid #18181b; }
+.subj-bg-blue { background: #2563eb; color: #ffffff !important; border: 1px solid #2563eb; }
+.subj-bg-emerald { background: #059669; color: #ffffff !important; border: 1px solid #059669; }
+.subj-bg-amber { background: #d97706; color: #ffffff !important; border: 1px solid #d97706; }
+.subj-bg-rose { background: #e11d48; color: #ffffff !important; border: 1px solid #e11d48; }
+.subj-bg-indigo { background: #4f46e5; color: #ffffff !important; border: 1px solid #4f46e5; }
+.subj-bg-cyan { background: #0891b2; color: #ffffff !important; border: 1px solid #0891b2; }
+.subj-bg-pink { background: #db2777; color: #ffffff !important; border: 1px solid #db2777; }
 
-.dark-theme .subj-bg-violet { background: #ffffff; color: #18181b; border-color: #ffffff; }
+.dark-theme .subj-bg-violet { background: #ffffff; color: #18181b !important; border: 1px solid #ffffff; }
 
 /* Subtle Dashed Divider (Paper Planner style) */
 .dashed-divider {
