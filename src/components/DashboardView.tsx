@@ -61,11 +61,11 @@ export const DashboardView: React.FC = () => {
   return (
     <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       {/* Welcome Banner + Quick NLP Bar */}
-      <div className="glass-panel" style={{ padding: '2rem', background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(6, 182, 212, 0.15))' }}>
+      <div className="glass-panel" style={{ padding: '2rem', background: '#ffffff', border: '2px solid #111111' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.2rem' }}>
-              <h1 style={{ fontSize: '1.75rem', fontWeight: 800 }}>👋 좋은 하루입니다! StudyHub 스마트 통합 홈</h1>
+              <h1 style={{ fontSize: '1.8rem', fontWeight: 900, color: '#111111' }}>👋 좋은 하루입니다! StudyHub 통합 홈</h1>
             </div>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
               오늘의 수업 일정, 할 일, 마크다운 메모 및 타이머가 한 곳에서 완벽하게 제어됩니다.

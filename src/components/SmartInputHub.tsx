@@ -35,14 +35,14 @@ export const SmartInputHub: React.FC = () => {
   return (
     <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       {/* Banner Intro */}
-      <div className="glass-panel" style={{ padding: '2rem', background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(6, 182, 212, 0.12))' }}>
+      <div className="glass-panel" style={{ padding: '2rem', background: '#ffffff', border: '2px solid #111111' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-          <div style={{ padding: '0.5rem', background: 'var(--color-primary)', color: 'white', borderRadius: '10px' }}>
+          <div style={{ padding: '0.5rem', background: '#111111', color: 'white', borderRadius: '8px' }}>
             <Sparkles size={24} />
           </div>
           <div>
-            <h1 style={{ fontSize: '1.6rem', fontWeight: 800 }}>⚡ 원스톱 스마트 입력 Hub</h1>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem' }}>
+            <h1 style={{ fontSize: '1.65rem', fontWeight: 900, color: '#111111' }}>⚡ 원스톱 스마트 입력 Hub</h1>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', fontWeight: 600 }}>
               자연어 한 줄 작성으로 <strong>캘린더, 투두, 메모 노드, 타이머</strong> 4대 핵심 도구가 한 번에 유기적으로 연동됩니다.
             </p>
           </div>

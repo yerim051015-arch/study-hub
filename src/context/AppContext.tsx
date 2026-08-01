@@ -94,7 +94,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   // Theme
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    return loadFromStorage<boolean>(STORAGE_KEYS.THEME, true);
+    return loadFromStorage<boolean>(STORAGE_KEYS.THEME, false);
   });
 
   useEffect(() => {

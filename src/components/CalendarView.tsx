@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar as CalendarIcon, ChevronLeft, ChevronRight, Plus, Clock, MapPin, FileText, Play, Trash2, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Plus, X, Clock, MapPin, FileText, Play, Trash2 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import type { ScheduleEvent } from '../types';
 
@@ -79,66 +79,76 @@ export const CalendarView: React.FC = () => {
   return (
     <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
       {/* Calendar Header Controls */}
-      <div className="glass-panel" style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-            <CalendarIcon size={22} color="var(--color-primary)" />
-            <h2 style={{ fontSize: '1.35rem', fontWeight: 800 }}>
-              {year}년 {month + 1}월
-            </h2>
+      <div className="glass-panel" style={{ padding: '1.5rem', background: '#ffffff', border: '2px solid #111111' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
+          {/* Big Paper Planner Month Display (like the user image) */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <span style={{ fontSize: '4rem', fontWeight: 900, lineHeight: 1, color: '#111111' }}>
+              {month + 1}
+            </span>
+            <div>
+              <div style={{ fontSize: '1.2rem', fontWeight: 900, letterSpacing: '0.05em', color: '#111111', textTransform: 'uppercase' }}>
+                {new Date(year, month, 1).toLocaleString('en-US', { month: 'long' })}
+              </div>
+              <p style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--text-subdued)', letterSpacing: '0.05em' }}>
+                HOW'S YOUR SCHEDULE FOR TODAY? • {year}
+              </p>
+            </div>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-            <button className="icon-btn" onClick={prevMonth} style={{ width: 34, height: 34 }}>
-              <ChevronLeft size={18} />
-            </button>
-            <button className="btn-secondary" style={{ padding: '0.35rem 0.75rem', fontSize: '0.82rem' }} onClick={goToday}>
-              오늘
-            </button>
-            <button className="icon-btn" onClick={nextMonth} style={{ width: 34, height: 34 }}>
-              <ChevronRight size={18} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+              <button className="icon-btn" onClick={prevMonth} style={{ width: 34, height: 34 }}>
+                <ChevronLeft size={18} />
+              </button>
+              <button className="btn-secondary" style={{ padding: '0.35rem 0.75rem', fontSize: '0.82rem' }} onClick={goToday}>
+                오늘
+              </button>
+              <button className="icon-btn" onClick={nextMonth} style={{ width: 34, height: 34 }}>
+                <ChevronRight size={18} />
+              </button>
+            </div>
+
+            <div className="nav-tabs">
+              <button
+                className={`nav-tab-btn ${viewMode === 'month' ? 'active' : ''}`}
+                style={{ padding: '0.35rem 0.75rem', fontSize: '0.82rem' }}
+                onClick={() => setViewMode('month')}
+              >
+                월간 뷰
+              </button>
+              <button
+                className={`nav-tab-btn ${viewMode === 'week' ? 'active' : ''}`}
+                style={{ padding: '0.35rem 0.75rem', fontSize: '0.82rem' }}
+                onClick={() => setViewMode('week')}
+              >
+                주간/시간표 뷰
+              </button>
+            </div>
+
+            <button className="btn-primary" style={{ padding: '0.45rem 0.9rem', fontSize: '0.85rem' }} onClick={() => setShowAddModal(true)}>
+              <Plus size={16} />
+              <span>일정 추가</span>
             </button>
           </div>
         </div>
 
-        {/* View Mode Toggle & Add Button */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <div className="nav-tabs">
-            <button
-              className={`nav-tab-btn ${viewMode === 'month' ? 'active' : ''}`}
-              style={{ padding: '0.35rem 0.75rem', fontSize: '0.82rem' }}
-              onClick={() => setViewMode('month')}
-            >
-              월간 뷰
-            </button>
-            <button
-              className={`nav-tab-btn ${viewMode === 'week' ? 'active' : ''}`}
-              style={{ padding: '0.35rem 0.75rem', fontSize: '0.82rem' }}
-              onClick={() => setViewMode('week')}
-            >
-              주간/시간표 뷰
-            </button>
-          </div>
-
-          <button className="btn-primary" style={{ padding: '0.45rem 0.9rem', fontSize: '0.85rem' }} onClick={() => setShowAddModal(true)}>
-            <Plus size={16} />
-            <span>일정 추가</span>
-          </button>
-        </div>
+        {/* Paper Planner Dashed Divider */}
+        <div style={{ borderBottom: '1.5px dashed #111111', margin: '0.5rem 0 1rem 0' }} />
       </div>
 
       {/* Month View Grid */}
       {viewMode === 'month' && (
-        <div className="glass-panel" style={{ padding: '1.25rem' }}>
-          {/* Weekday Labels */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.5rem', marginBottom: '0.5rem', textTransform: 'uppercase', fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-subdued)', textAlign: 'center' }}>
-            <span style={{ color: '#f43f5e' }}>일</span>
-            <span>월</span>
-            <span>화</span>
-            <span>수</span>
-            <span>목</span>
-            <span>금</span>
-            <span style={{ color: '#60a5fa' }}>토</span>
+        <div className="glass-panel" style={{ padding: '1.25rem', background: '#ffffff', border: '1.5px solid #111111' }}>
+          {/* Weekday Labels (B&W Bold Planner Labels) */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.5rem', marginBottom: '0.75rem', textTransform: 'uppercase', fontSize: '0.82rem', fontWeight: 900, color: '#111111', textAlign: 'center', letterSpacing: '0.05em', borderBottom: '1px solid #111111', paddingBottom: '0.5rem' }}>
+            <span style={{ color: '#e11d48' }}>SUN</span>
+            <span>MON</span>
+            <span>TUE</span>
+            <span>WED</span>
+            <span>THU</span>
+            <span>FRI</span>
+            <span style={{ color: '#2563eb' }}>SAT</span>
           </div>
 
           {/* Days Grid */}
