@@ -73,7 +73,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <ShieldCheck size={24} color="var(--color-primary)" />
             <h3 style={{ fontSize: '1.25rem', fontWeight: 800 }}>
-              {mode === 'signin' ? 'UniSync 계정 로그인' : 'UniSync 회원가입'}
+              {mode === 'signin' ? 'StudyHub 계정 로그인' : 'StudyHub 회원가입'}
             </h3>
           </div>
           <button className="icon-btn" style={{ width: 32, height: 32 }} onClick={onClose}>

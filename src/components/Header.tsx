@@ -70,7 +70,7 @@ export const Header: React.FC = () => {
             </div>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <span>UniSync</span>
+                <span>StudyHub</span>
                 <span className="brand-badge">대학생 올인원</span>
               </div>
               <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 500 }}>

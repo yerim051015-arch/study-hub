@@ -1,13 +1,13 @@
 import type { Subject, ScheduleEvent, TodoItem, MemoNode, DDayItem, StudySessionLog } from '../types';
 
 const STORAGE_KEYS = {
-  SUBJECTS: 'unisync_subjects_v1',
-  SCHEDULES: 'unisync_schedules_v1',
-  TODOS: 'unisync_todos_v1',
-  MEMOS: 'unisync_memos_v1',
-  DDAYS: 'unisync_ddays_v1',
-  LOGS: 'unisync_study_logs_v1',
-  THEME: 'unisync_theme_v1',
+  SUBJECTS: 'studyhub_subjects_v1',
+  SCHEDULES: 'studyhub_schedules_v1',
+  TODOS: 'studyhub_todos_v1',
+  MEMOS: 'studyhub_memos_v1',
+  DDAYS: 'studyhub_ddays_v1',
+  LOGS: 'studyhub_study_logs_v1',
+  THEME: 'studyhub_theme_v1',
 };
 
 export const DEFAULT_SUBJECTS: Subject[] = [

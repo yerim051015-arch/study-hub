@@ -1,5 +1,5 @@
 -- ========================================================
--- 🎓 UniSync Supabase PostgreSQL Database Setup Script (V2)
+-- 🎓 StudyHub Supabase PostgreSQL Database Setup Script (V2)
 -- Supabase 대시보드 (https://supabase.com) > SQL Editor에 전체 복사하여 [Run] 하세요.
 -- ========================================================
 

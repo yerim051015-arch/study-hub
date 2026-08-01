@@ -65,7 +65,7 @@ export const DashboardView: React.FC = () => {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.2rem' }}>
-              <h1 style={{ fontSize: '1.75rem', fontWeight: 800 }}>👋 좋은 하루입니다! UniSync 스마트 통합 홈</h1>
+              <h1 style={{ fontSize: '1.75rem', fontWeight: 800 }}>👋 좋은 하루입니다! StudyHub 스마트 통합 홈</h1>
             </div>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
               오늘의 수업 일정, 할 일, 마크다운 메모 및 타이머가 한 곳에서 완벽하게 제어됩니다.
