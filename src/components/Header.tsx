@@ -69,9 +69,9 @@ export const Header: React.FC = () => {
               <Sparkles size={22} />
             </div>
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <span>StudyHub</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
                 <span className="brand-badge">대학생 올인원</span>
+                <span>StudyHub</span>
               </div>
               <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 500 }}>
                 스마트 연동 학습 시스템
